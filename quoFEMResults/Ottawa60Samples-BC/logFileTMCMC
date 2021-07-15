@@ -1,0 +1,308 @@
+
+Running quoFEM's UCSD_UQ engine workflow
+CWD: C:\Users\adith\Desktop\NHERI-REU\SimCenter\build-quoFEM-Desktop-Debug
+
+==========================
+Parsing the json input file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\templatedir\dakota.json
+
+Reading the json file
+
+Parsing the inputs read in from json file
+	Processing UQ inputs
+	Processing path data
+	Getting the number of models
+	The number of models is: 1
+	Looping over the models
+	Model number: 0
+		Processing priors from RV inputs
+			RV number: 0, name: Dr, dist: Uniform, params: 0.5, 0.7
+			RV number: 1, name: G0, dist: Uniform, params: 100, 400
+			RV number: 2, name: hpo, dist: Uniform, params: 0.01, 0.4
+		Adding one prior distribution per EDP for the error covariance multiplier term
+			EDP number: 0, name: nCycles.CovMultiplier, dist: InvGamma, params: 3, 2
+Completed parsing the inputs
+
+==========================
+Processing log-likelihood script options
+Using the default loglikelihood script: C:/Users/adith/Desktop/NHERI-REU/SimCenter/quoFEM/backend\applications/performUQ/UCSD_UQ\defaultLogLikeScript.py
+
+==========================
+Processing EDP definitions
+The EDPs defined are:Name: 'nCycles', Length: 6
+
+Expected length of each line in data file: 6
+
+==========================
+Processing calibration data file
+Calibration data file being processed: C:/Users/adith/Documents/OttawaF65QF\Ottawa_F65_CalibrationFile.txt
+
+Line 1, length 6: 2.600000000000000000e+01 2.100000000000000000e+01 1.300000000000000000e+01 5.000000000000000000e+00 4.000000000000000000e+00 3.000000000000000000e+00 
+Finished reading in calibration data. Shape of calibration data: (1, 6)
+
+The number of experiments: 1
+The number of calibration terms per experiment: 6
+Computing normalizing factors. The normalizing factors used are the absolute maximum of the data for each response variable. The data and the prediction will be divided by the normalizing factors.
+Normalized calibration data: 
+[[1.         0.80769231 0.5        0.19230769 0.15384615 0.11538462]]
+The normalizing factors computed are: 
+EDP: nCycles, normalizing factor: 26.0
+
+The locShift values are: 
+EDP: nCycles, locShift: 0.0
+
+==========================
+Processing options for variance/covariance:
+One variance value or covariance matrix will be used per response quantity per experiment.
+If the user does not supply variance or covariance data, a default variance value will be
+used per response quantity, which is constant across experiments. The default variance is
+computed as the variance of the normalized data, if there is data from more than one experiment. 
+If there is data from only one experiment, then a default variance value is computed by 
+assuming that the standard deviation of the error is 5% of the absolute maximum value of 
+the corresponding normalized response data.
+
+Looping over the experiments and EDPs
+
+Experiment number: 1
+	EDP: nCycles
+		Checking to see if user-supplied file 'nCycles.1.sigma' exists in 'C:/Users/adith/Documents/OttawaF65QF'
+		Did not find a user supplied file. Using the default variance value.
+		The covariance matrix is an identity matrix multiplied by this value.
+		Covariance matrix: 0.0025000000000000005
+
+==========================
+Setting up the TMCMC algorithm
+	Results path: C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter
+	Seed: 1
+	Number of particles: 60
+	Number of MCMC steps in first stage: 2
+	Max. number of MCMC steps in any stage: 5
+
+==========================
+Looping over each model
+
+	==========================
+	Starting analysis for model 0
+	==========================
+		Assigning probability distributions to the parameters
+
+	==========================
+	Running the TMCMC algorithm
+	==========================
+
+		==========================
+		Stage number: 0
+		Sampling from prior
+		beta = 0
+		ESS = 60
+		scalem = 1.00
+
+		Number of model evaluations in this stage: 60
+		Total number of model evaluations so far: 60
+
+		Writing prior samples to 'dakotaTabPrior.out' for quoFEM to read the results
+			Creating headings
+			Getting data from first stage
+			Writing to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\dakotaTabPrior.out
+		==========================
+
+		Writing samples from stage 0 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage0.csv
+
+		==========================
+		Stage number: 1
+		beta = 0.00004578
+		ESS = 57
+		scalem = 1.00
+
+		Number of model evaluations in this stage: 120
+		Total number of model evaluations so far: 180
+
+		acceptance rate = 0.266667
+		adapted max MCMC steps = 3
+		next MCMC Nsteps = 3
+		==========================
+
+		Writing samples from stage 1 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage1.csv
+
+		==========================
+		Stage number: 2
+		beta = 0.00053309
+		ESS = 54
+		scalem = 0.35
+
+		Number of model evaluations in this stage: 180
+		Total number of model evaluations so far: 360
+
+		acceptance rate = 0.455556
+		adapted max MCMC steps = 4
+		next MCMC Nsteps = 4
+		==========================
+
+		Writing samples from stage 2 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage2.csv
+
+		==========================
+		Stage number: 3
+		beta = 0.00196799
+		ESS = 51
+		scalem = 0.52
+
+		Number of model evaluations in this stage: 240
+		Total number of model evaluations so far: 600
+
+		acceptance rate = 0.304167
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 3 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage3.csv
+
+		==========================
+		Stage number: 4
+		beta = 0.00587325
+		ESS = 48
+		scalem = 0.38
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 900
+
+		acceptance rate = 0.453333
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 4 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage4.csv
+
+		==========================
+		Stage number: 5
+		beta = 0.01885173
+		ESS = 45
+		scalem = 0.51
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 1200
+
+		acceptance rate = 0.380000
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 5 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage5.csv
+
+		==========================
+		Stage number: 6
+		beta = 0.06436760
+		ESS = 42
+		scalem = 0.45
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 1500
+
+		acceptance rate = 0.223333
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 6 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage6.csv
+
+		==========================
+		Stage number: 7
+		beta = 0.18152995
+		ESS = 40
+		scalem = 0.31
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 1800
+
+		acceptance rate = 0.226667
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 7 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage7.csv
+
+		==========================
+		Stage number: 8
+		beta = 0.36621831
+		ESS = 38
+		scalem = 0.31
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 2100
+
+		acceptance rate = 0.220000
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 8 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage8.csv
+
+		==========================
+		Stage number: 9
+		beta = 0.87962874
+		ESS = 37
+		scalem = 0.31
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 2400
+
+		acceptance rate = 0.246667
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 9 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage9.csv
+
+		==========================
+		Stage number: 10
+		beta = 1.00000000
+		ESS = 36
+		scalem = 0.33
+
+		Number of model evaluations in this stage: 300
+		Total number of model evaluations so far: 2700
+
+		acceptance rate = 0.273333
+		adapted max MCMC steps = 5
+		next MCMC Nsteps = 5
+		==========================
+
+		Writing samples from stage 10 to csv file
+			Wrote to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\resultsStage10.csv
+
+	==========================
+	TMCMC algorithm finished running
+	==========================
+
+	==========================
+	Starting post-processing
+
+		Computing the model evidence
+			Model evidence: 4.527022e-03
+
+		Writing posterior samples to 'dakotaTab.out' for quoFEM to read the results
+			Creating headings
+			Getting data from last stage
+			Writing to file C:\Users\adith\Documents\quoFEM\LocalWorkDir\tmp.SimCenter\dakotaTab.out
+
+	==========================
+	Post processing finished
+	==========================
+
+	==========================
+	Completed analysis for model 0
+	==========================
+
+==========================
+Finished looping over each model
+==========================
+
+UCSD_UQ engine workflow complete!

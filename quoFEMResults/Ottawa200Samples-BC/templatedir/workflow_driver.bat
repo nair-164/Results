@@ -1,0 +1,2 @@
+"C:/Users/adith/Desktop/NHERI-REU/SimCenter/quoFEM/backend/applications/performUQ/templateSub/simCenterSub.exe"  params.in  tmpSimCenter.params  Parameters.py
+"C:\Users\adith\AppData\Local\Programs\Python\Python38\python.exe" CSS-OPDriver-LEAP2020.py nCycles

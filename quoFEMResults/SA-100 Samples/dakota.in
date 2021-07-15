@@ -1,0 +1,43 @@
+environment 
+ tabular_data 
+ tabular_data_file = 'dakotaTab.out' 
+
+method,
+ sampling
+ sample_type = lhs 
+ samples = 100 
+ seed = 6
+
+variance_based_decomp 
+
+variables 
+ active uncertain 
+  uniform_uncertain = 5
+    lower_bounds = 0.4 100 0.01 0.01 0.01 
+    upper_bound = 0.8 400 0.4 1 1 
+    descriptors = 'Dr' 'G0' 'hpo' 'nb' 'nd' 
+
+
+
+interface 
+  analysis_driver = 'workflow_driver1.bat'
+  fork
+   parameters_file = 'paramsDakota.in'
+   results_file = 'results.out' 
+   aprepro 
+   work_directory
+     named 'workdir' 
+     directory_tag
+     directory_save
+     copy_files = 'templatedir/*' 
+  asynchronous evaluation_concurrency = 8
+
+responses
+ response_functions = 3
+ response_descriptors = 'a' 'b' 'ncycles' 
+  scalar_responses = 2
+  field_responses = 1
+  lengths = 3 
+ no_gradients
+ no_hessians
+

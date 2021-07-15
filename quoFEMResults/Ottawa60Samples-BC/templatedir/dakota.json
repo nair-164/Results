@@ -1,0 +1,77 @@
+{
+    "Applications": {
+        "UQ": {
+            "Application": "UCSD-UQ",
+            "ApplicationData": {
+            }
+        }
+    },
+    "EDP": [
+        {
+            "length": 6,
+            "name": "nCycles",
+            "type": "field"
+        }
+    ],
+    "UQ_Method": {
+        "calDataFile": "Ottawa_F65_CalibrationFile.txt",
+        "calDataFilePath": "C:/Users/adith/Documents/OttawaF65QF",
+        "logLikelihoodFile": "",
+        "logLikelihoodPath": "",
+        "numParticles": 60,
+        "seed": 1,
+        "uqEngine": "UCSD-UQ",
+        "uqType": "Transitional Markov chain Monte Carlo"
+    },
+    "fem": {
+        "dir": "C:/Users/adith/Documents/OttawaF65QF",
+        "inputFile": "C:/Users/adith/Documents/OttawaF65QF/CSS-OPDriver-LEAP2020.py",
+        "mainInput": "CSS-OPDriver-LEAP2020.py",
+        "mainPostprocessScript": "",
+        "modelTag": 0,
+        "numInputs": 1,
+        "parametersFile": "Parameters.py",
+        "parametersScript": "C:/Users/adith/Documents/OttawaF65QF/Parameters.py",
+        "postprocessScript": "",
+        "program": "OpenSeesPy"
+    },
+    "localAppDir": "C:/Users/adith/Desktop/NHERI-REU/SimCenter/quoFEM/backend",
+    "python": "C:\\Users\\adith\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "randomVariables": [
+        {
+            "distribution": "Uniform",
+            "inputType": "Parameters",
+            "lowerbound": 0.5,
+            "name": "Dr",
+            "refCount": 1,
+            "upperbound": 0.7,
+            "value": "RV.Dr",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Uniform",
+            "inputType": "Parameters",
+            "lowerbound": 100,
+            "name": "G0",
+            "refCount": 1,
+            "upperbound": 400,
+            "value": "RV.G0",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Uniform",
+            "inputType": "Parameters",
+            "lowerbound": 0.01,
+            "name": "hpo",
+            "refCount": 1,
+            "upperbound": 0.4,
+            "value": "RV.hpo",
+            "variableClass": "Uncertain"
+        }
+    ],
+    "remoteAppDir": "/home1/00477/tg457427/SimCenterBackendApplications/v2.3.0",
+    "uqResults": {
+        "resultType": "NONE"
+    },
+    "workingDir": "C:/Users/adith/Documents/quoFEM/LocalWorkDir"
+}
