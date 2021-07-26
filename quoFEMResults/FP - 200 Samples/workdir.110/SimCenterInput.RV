@@ -1,0 +1,8 @@
+pset Dr "RV.Dr"
+pset G0 "RV.G0"
+pset hpo "RV.hpo"
+
+ set listQoI "maxDisp resDisp "
+
+
+ source N10_T3_Modified.tcl

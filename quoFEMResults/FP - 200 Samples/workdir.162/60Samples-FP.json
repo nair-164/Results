@@ -1,0 +1,77 @@
+{
+    "Applications": {
+        "UQ": {
+            "Application": "SimCenterUQ-UQ",
+            "ApplicationData": {
+            }
+        }
+    },
+    "EDP": [
+        {
+            "length": 1,
+            "name": "maxDisp",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "resDisp",
+            "type": "scalar"
+        }
+    ],
+    "UQ_Method": {
+        "RVdataGroup": "{Dr, G0, hpo}",
+        "samplingMethodData": {
+            "method": "Monte Carlo",
+            "samples": 1,
+            "seed": 770
+        },
+        "uqEngine": "SimCenterUQ",
+        "uqType": "Forward Propagation"
+    },
+    "fem": {
+        "dir": "{Current_Dir}/.",
+        "inputFile": "{Current_Dir}/N10_T3_Modified.tcl",
+        "mainInput": "N10_T3_Modified.tcl",
+        "mainPostprocessScript": "",
+        "modelTag": 0,
+        "numInputs": 1,
+        "postprocessScript": "",
+        "program": "OpenSees"
+    },
+    "localAppDir": "C:/Users/adith/Desktop/NHERI-REU/SimCenter/quoFEM/backend",
+    "python": "C:\\Users\\adith\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "randomVariables": [
+        {
+            "dataDir": "C:/Users/adith/Documents/Ottawa60Samples-BC/Dr.txt",
+            "distribution": "Discrete",
+            "inputType": "Dataset",
+            "name": "Dr",
+            "refCount": 1,
+            "value": "RV.Dr",
+            "variableClass": "Uncertain"
+        },
+        {
+            "dataDir": "C:/Users/adith/Documents/Ottawa60Samples-BC/G0.txt",
+            "distribution": "Discrete",
+            "inputType": "Dataset",
+            "name": "G0",
+            "refCount": 1,
+            "value": "RV.G0",
+            "variableClass": "Uncertain"
+        },
+        {
+            "dataDir": "C:/Users/adith/Documents/Ottawa60Samples-BC/hpo.txt",
+            "distribution": "Discrete",
+            "inputType": "Dataset",
+            "name": "hpo",
+            "refCount": 1,
+            "value": "RV.hpo",
+            "variableClass": "Uncertain"
+        }
+    ],
+    "remoteAppDir": "/home1/00477/tg457427/SimCenterBackendApplications/v2.3.0",
+    "uqResults": {
+        "resultType": "NONE"
+    },
+    "workingDir": "C:/Users/adith/Documents/quoFEM/LocalWorkDir"
+}

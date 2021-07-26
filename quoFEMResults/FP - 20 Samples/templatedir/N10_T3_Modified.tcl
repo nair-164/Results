@@ -54,9 +54,9 @@ set grade 3.0
 set g -9.81
 
 # Material parameters
-#pset Dr 0.61
-#pset G0 255
-#pset hpo 0.14
+pset Dr 0.61
+pset G0 255
+pset hpo 0.14
 
 set N160 10.0
 set Cd   46.0
@@ -426,8 +426,14 @@ remove recorders
 # recorder time step
 set recDT  0.001
 
+set nodeListP {}
+for {set j 1} {$j <= 49} {incr j 2} {
+    lappend nodeListP $j
+}
+# puts $nodeListP
+
 # record nodal displacment, acceleration, and porepressure
-eval "recorder Node -file displacement.out -time -dT $recDT -node 49 -dof 1 disp"
+eval "recorder Node -file displacement.out -time -dT $recDT -node $nodeListP -dof 1 disp"
 # eval "recorder Node -file acceleration.out -time -dT $recDT -node $nodeList3 -dof 1 2  accel"
 # eval "recorder Node -file porePressure.out -time -dT $recDT -node $nodeList3 -dof 3 vel"
 # record elemental stress and strain (files are names to reflect GiD gp numbering)
@@ -523,27 +529,52 @@ puts "Finished with dynamic analysis..."
 
 wipe
 
-set dispfile [open "displacement.out" "r"]
-
-set res49 0
-
-gets $dispfile row
-set disp0 [lindex [split $row " "] 1]
-set max49 0
-
-while {1 == 1} {
-    set cnt [gets $dispfile row]
-    if {$cnt < 0} {
-        set res49 [expr abs($disp49)]
-        break
+set OutputFile [open "results.out" w]
+    
+for {set z 1} {$z <= 25} {incr z} { 
+    set dispfile [open "displacement.out" "r"]
+    gets $dispfile row
+    set res49 0
+    set max49 0
+    set disp0 [lindex [split $row " "] $z]
+    while {1 == 1} {
+        set cnt [gets $dispfile row]
+        if {$cnt < 0} {
+            set res49 [expr abs($disp49)]
+            break
+        }
+        set disp49 [expr ([lindex [split $row " "] $z] - $disp0)]
+        if {[expr abs($disp49) > $max49]} {set max49 [expr abs($disp49)]}
     }
-    set disp49 [expr ([lindex [split $row " "] 1] - $disp0)]
-    if {[expr abs($disp49) > $max49]} {set max49 [expr abs($disp49)]}
+    puts -nonewline $OutputFile "$max49 $res49 " 
+    close $dispfile
 }
 
 
-set OutputFile [open "results.out" w]
-puts $OutputFile "$max49 $res49"
+
+# array set maxnode {}
+# array set disp {}
+# array set res {}
+
+# for {set z 1} {$z <= 25} {incr z} {        
+#     set disp0 [lindex [split $row " "] $z]
+#     set maxnode($z) 0
+#     while {1 == 1} {
+#         set cnt [gets $dispfile row]
+#         if {$cnt < 0} {
+# #             if {$z == 25} {
+# #                 set res($z) [expr abs($disp($z))]
+# #                 break
+# #             }
+#             set res($z) [expr abs($disp($z))]
+#             break
+#         }    
+#         set disp($z) [expr ([lindex [split $row " "] $z] - $disp0)]
+#         if {[expr abs($disp($z)) > $maxnode($z)]} {set maxnode($z) [expr abs($disp($z))]}
+#     }
+# }
+
+
 close $OutputFile
 
 wipe

@@ -1,0 +1,335 @@
+{
+    "Applications": {
+        "UQ": {
+            "Application": "SimCenterUQ-UQ",
+            "ApplicationData": {
+            }
+        }
+    },
+    "EDP": [
+        {
+            "length": 1,
+            "name": "max1",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res1",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max3",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res3",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max5",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res5",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max7",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res7",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max9",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res9",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max11",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res11",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max13",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res13",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max15",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res15",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max17",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res17",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max19",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res19",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max21",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res21",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max23",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res23",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max25",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res25",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max27",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res27",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max29",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res29",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max31",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res31",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max33",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res33",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max35",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res35",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max37",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res37",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max39",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res39",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max41",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res41",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max43",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res43",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max45",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res45",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max47",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res47",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "max49",
+            "type": "scalar"
+        },
+        {
+            "length": 1,
+            "name": "res49",
+            "type": "scalar"
+        }
+    ],
+    "UQ_Method": {
+        "RVdataGroup": "{Dr,G0,hpo}",
+        "samplingMethodData": {
+            "method": "Monte Carlo",
+            "samples": 20,
+            "seed": 779
+        },
+        "uqEngine": "SimCenterUQ",
+        "uqType": "Sensitivity Analysis"
+    },
+    "fem": {
+        "dir": "C:/Users/adith/Documents/GitHun/Results/quoFEMResults/FP - 200 Samples/templatedir - for SA",
+        "inputFile": "C:/Users/adith/Documents/GitHun/Results/quoFEMResults/FP - 200 Samples/templatedir - for SA/N10_T3_Modified.tcl",
+        "mainInput": "N10_T3_Modified.tcl",
+        "mainPostprocessScript": "",
+        "modelTag": 0,
+        "numInputs": 1,
+        "postprocessScript": "",
+        "program": "OpenSees"
+    },
+    "localAppDir": "C:/Users/adith/Desktop/NHERI-REU/SimCenter/quoFEM/backend",
+    "python": "C:\\Users\\adith\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "randomVariables": [
+        {
+            "dataDir": "C:/Users/adith/Documents/Ottawa200Samples-BC/Dr.txt",
+            "distribution": "Discrete",
+            "inputType": "Dataset",
+            "name": "Dr",
+            "refCount": 2,
+            "value": "RV.Dr",
+            "variableClass": "Uncertain"
+        },
+        {
+            "dataDir": "C:/Users/adith/Documents/Ottawa200Samples-BC/G0.txt",
+            "distribution": "Discrete",
+            "inputType": "Dataset",
+            "name": "G0",
+            "refCount": 2,
+            "value": "RV.G0",
+            "variableClass": "Uncertain"
+        },
+        {
+            "dataDir": "C:/Users/adith/Documents/Ottawa200Samples-BC/hpo.txt",
+            "distribution": "Discrete",
+            "inputType": "Dataset",
+            "name": "hpo",
+            "refCount": 2,
+            "value": "RV.hpo",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Uniform",
+            "inputType": "Parameters",
+            "lowerbound": -3,
+            "name": "grade",
+            "refCount": 0,
+            "upperbound": 3,
+            "value": "RV.grade",
+            "variableClass": "Uncertain"
+        }
+    ],
+    "remoteAppDir": "/home1/00477/tg457427/SimCenterBackendApplications/v2.3.0",
+    "uqResults": {
+        "Comblist": [
+        ],
+        "QoIlist": [
+        ],
+        "numCombs": -842150451,
+        "numQoI": -842150451,
+        "resultType": "SimCenterUQResultsSensitivity",
+        "sobols": [
+        ]
+    },
+    "workingDir": "C:/Users/adith/Documents/quoFEM/LocalWorkDir"
+}
